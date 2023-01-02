@@ -1,0 +1,13 @@
+/* Customize Bootstrap */
+
+$primary: #3c76cb;
+
+$theme-colors: (
+  primary: $primary,
+);
+
+$border-radius: 2px !default;
+$input-btn-focus-box-shadow: none;
+$input-btn-focus-width: 0;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
