@@ -2,6 +2,7 @@
   "name": "react-template",
   "version": "0.1.0",
   "main": "public/electron.js",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
@@ -17,8 +18,8 @@
     "@types/react-dom": "^18.0.10",
     "bootstrap": "^5.2.3",
     "concurrently": "^7.6.0",
-    "electron": "^22.0.0",
     "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -37,7 +38,9 @@
     "eject": "react-scripts eject",
     "sass": "sass src/assets/sass:src/assets/css --watch --no-source-map",
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
-    "electron": "wait-on tcp:3000 && electron ."
+    "electron": "wait-on tcp:3000 && electron-forge start",
+    "package": "react-scripts build && electron-forge package",
+    "make": "react-scripts build && electron-forge make"
   },
   "proxy": "http://localhost:4001",
   "eslintConfig": {
@@ -59,8 +62,15 @@
     ]
   },
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
     "@redux-devtools/extension": "^3.2.3",
     "@types/bootstrap": "^5.2.6",
+    "electron": "^22.0.0",
+    "electron-devtools-installer": "^3.2.0",
     "sass": "^1.57.1"
   }
 }
